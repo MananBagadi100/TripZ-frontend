@@ -1,0 +1,67 @@
+.navbar-main-container {
+    display: flex;
+    flex-direction: column;
+    height: 65px;
+    width: 100%;
+    background-color: #ffedd5 ;
+    box-sizing: border-box;
+}
+.navbar-content-area {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    flex-direction: row;
+    padding: 4px 8px;
+    box-sizing: border-box;
+}
+.navbar-public-routes {
+    display: flex;
+    flex-direction: row;
+    height: 100%;
+    width: 60%;
+    justify-content: space-between;
+    align-items: center;
+    box-sizing: border-box;
+}
+.tripz-logo-in-navbar {
+    display: flex;
+    width: 40px;
+    box-sizing: border-box;
+}
+.tripz-logo {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+.navbar-home-route ,
+.navbar-contact-us-route {
+    text-decoration: none;
+    color: inherit;
+    font-weight: bold;
+}
+.navbar-protected-route {
+    display: flex;
+    height: 100%;
+    width: 40%;
+    justify-content: flex-end;
+    align-items: center;
+    box-sizing: border-box;
+}
+.navbar-admin-route {
+    display: flex;
+    flex-direction: column;
+    height: fit-content;
+    padding: 8px 12px;
+    text-decoration: none;
+    background-color: var(--btn-bg);
+    color: var(--btn-txt);
+    border-radius: 16px;
+    align-items: center;
+    justify-content: center;
+}
+@media (min-width: 734px) {
+    .navbar-public-routes {
+        justify-content: flex-start;
+        gap: 36px;
+    }
+}
