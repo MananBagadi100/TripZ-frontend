@@ -59,4 +59,9 @@
     align-items: center;
     justify-content: center;
 }
-
+@media (min-width: 734px) {
+    .navbar-public-routes {
+        justify-content: flex-start;
+        gap: 36px;
+    }
+}
