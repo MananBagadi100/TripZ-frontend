@@ -12,10 +12,10 @@ const Navbar = () => {
                         </Link>
                     </div>
                     <NavLink to='/' className="navbar-home-route">Home</NavLink>
-                    <NavLink to='/contact-us' className="navbar-contact-us-route">Contact Us</NavLink>
+                    <NavLink to='/about-us' className="navbar-contact-us-route">About Us</NavLink>
                 </div>
                 <div className="navbar-protected-route">
-                    <Link className='navbar-admin-route'>Admin</Link>
+                    <Link to='/admin/login'  className='navbar-admin-route'>Admin</Link>
                 </div>
             </div>
         </div>

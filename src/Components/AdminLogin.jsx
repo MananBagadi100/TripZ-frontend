@@ -1,0 +1,72 @@
+import {useForm} from "react-hook-form";
+import {useState} from "react";
+import axios from "axios";
+import "../Styles/AdminLoginStyles.css";
+import { useNavigate } from "react-router-dom";
+
+const AdminLogin = () => {
+    const [serverError,setServerError] = useState(null);
+    const navigate = useNavigate()
+    const {
+        register,
+        handleSubmit,
+        formState: {
+            errors,
+            isSubmitting
+        }
+    } = useForm();
+
+    const onSubmit = async(data) => {
+        try {
+            setServerError(null);
+
+            const response = await axios.post("http://localhost:3000/api/admin/login",
+                data, 
+                {withCredentials: true});
+
+            console.log("Login success:", response.data);
+
+            navigate('/admin/dashboard')
+        } catch (err) {
+            console.error("Login error:", err);
+            setServerError(err?.response?.data?.message || "Something went wrong. Please try again.");
+        }
+    };
+
+    return (
+        <div className="login-full-container">
+            <div className="login-dialog-box">
+                <div className="dialog-box-title-area">Login</div>
+                <form className="dialog-box-content-area" onSubmit={handleSubmit(onSubmit)}>
+                    <input
+                        type="email"
+                        placeholder="Enter email"
+                        {...register("email", { required: true })}
+                        className="login-input"/> {errors.email && (
+                        <span className="error-text">Email is required</span>
+                    )}
+
+                    <input
+                        type="password"
+                        placeholder="Enter password"
+                        {...register("password", { required: true })}
+                        className="login-input"/> {errors.password && (
+                        <span className="error-text">Password is required</span>
+                    )}
+
+                    {serverError && (
+                        <div className="server-error-text">{serverError}</div>
+                    )}
+
+                    <button type="submit" className="login-submit-btn" disabled={isSubmitting}>
+                        {isSubmitting
+                            ? "Submitting..."
+                            : "Submit"}
+                    </button>
+                </form>
+            </div>
+        </div>
+    );
+};
+
+export default AdminLogin;
