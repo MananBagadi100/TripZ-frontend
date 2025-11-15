@@ -1,8 +1,11 @@
-import '../Styles/NavbarStyles.css'
+import '../Styles/HomeStyles.css'
 const Home = () => {
     return (
         <div className="home-full-container">
-            This is home page
+            <div className="home-heading-area">Tours</div>
+            <div className="home-content-area">
+                hello
+            </div>
         </div>
     )
 }

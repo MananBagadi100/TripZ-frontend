@@ -10,9 +10,11 @@ function App() {
     <div className="all-pages-main-container">
       <BrowserRouter>
         <Navbar />
-        <Routes>
-          <Route to='/' element={<Home />} />
-        </Routes>
+        <div className="all-pages-content-area">
+          <Routes>
+            <Route path='/' element={<Home />} />
+          </Routes>
+        </div>
       </BrowserRouter>
     </div>
   )
