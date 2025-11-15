@@ -17,6 +17,7 @@ const AdminLogin = () => {
     } = useForm();
 
     const onSubmit = async(data) => {
+        console.log(data)
         try {
             setServerError(null);
 
@@ -58,11 +59,13 @@ const AdminLogin = () => {
                         <div className="server-error-text">{serverError}</div>
                     )}
 
-                    <button type="submit" className="login-submit-btn" disabled={isSubmitting}>
-                        {isSubmitting
-                            ? "Submitting..."
-                            : "Submit"}
-                    </button>
+                    <input 
+                        type="submit" 
+                        className="login-submit-btn" 
+                        value='Submit'
+                        disabled={isSubmitting}
+                    />
+
                 </form>
             </div>
         </div>

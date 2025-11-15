@@ -12,6 +12,7 @@
     flex-direction: column;
     height: 225px;
     width: 100%;
+    max-width: 400px;
     margin-top: 48px;
     box-sizing: border-box;
 }
@@ -44,7 +45,8 @@
     width: 90%;
     height: 24px;
 }
-.error-text {
+.error-text,
+.server-error-text {
     color: red;
 }
 .login-submit-btn {
@@ -53,4 +55,10 @@
     color: var(--btn-txt);
     border-radius: 16px;
     padding: 8px 16px;
+}
+
+@media (min-width:734px) {
+    .login-dialog-box {
+        max-width: 400px;
+    }
 }
