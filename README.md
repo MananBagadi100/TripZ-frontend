@@ -25,8 +25,8 @@ A full‑stack travel management application with public tour browsing and an au
 
 ### **Deployment**
 - **Frontend:** Vercel  
-- **Backend:** Render / Railway  
-- **Database:** MySQL Local or Cloud
+- **Backend:** Vercel
+- **Database:** MySQL Local or Free MySQL database (Cloud)
 
 ---
 
@@ -49,8 +49,8 @@ A full‑stack travel management application with public tour browsing and an au
 
 ### **1. Clone both repositories**
 ```sh
-git clone <frontend_repo_url>
-git clone <backend_repo_url>
+git clone https://github.com/MananBagadi100/TripZ-frontend
+git clone https://github.com/MananBagadi100/TripZ-backend
 ```
 
 ---
@@ -114,11 +114,11 @@ http://localhost:5173
 
 ## 🌐 Deployment URLs (fill these after deployment)
 
-- **Frontend (Vercel):** <paste_here>
-- **Backend API Base URL:** <paste_here>
+- **Frontend (Vercel):** [<paste_here>](https://trip-z-frontend.vercel.app/)
+- **Backend API Base URL:** [<paste_here>](https://trip-z-backend.vercel.app/)
 - **Public GitHub Repos:**
-  - Frontend Repo: <paste_here>
-  - Backend Repo: <paste_here>
+  - Frontend Repo: [<paste_here>](https://github.com/MananBagadi100/TripZ-frontend)
+  - Backend Repo: [<paste_here>](https://github.com/MananBagadi100/TripZ-backend)
 
 ---
 
