@@ -1,0 +1,98 @@
+.tour-details-full-container {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    min-height: 100vh;
+    padding: 16px 12px;
+    box-sizing: border-box;
+    align-items: center;
+    background-color: #fff;
+}
+
+/* Content area capped – controls ultra-wide screens */
+.tour-details-content-area {
+    width: 100%;
+    max-width: 1150px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    margin-top: 20px;
+    box-sizing: border-box;
+}
+
+/* Large hero image */
+.tour-details-hero-image {
+    width: 100%;
+    height: 340px;
+    border-radius: 16px;
+    object-fit: cover;
+    background-color: #f0f0f0;
+}
+
+/* Info section */
+.tour-details-info {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    padding: 4px;
+}
+
+.tour-details-title {
+    font-size: 26px;
+    font-weight: bold;
+}
+
+.tour-details-destination {
+    font-size: 18px;
+}
+
+.tour-details-price {
+    font-size: 20px;
+    font-weight: bold;
+    color: var(--product-prices-color);
+}
+
+.tour-details-duration {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 18px;
+}
+
+.tour-details-start-date {
+    font-size: 18px;
+    color: #333;
+}
+
+.tour-details-dummy-text {
+    font-size: 16px;
+    color: #555;
+    line-height: 1.4;
+    margin-top: 6px;
+}
+/* ---- Desktop Responsive part ---- */
+@media (min-width: 734px) {
+    .tour-details-content-area {
+        flex-direction: row;
+        gap: 32px;
+        margin-top: 28px;
+        align-items: flex-start;
+    }
+
+    .tour-details-hero-image {
+        width: 50%;
+        height: 480px;
+        border-radius: 16px;
+        object-fit: cover;
+    }
+
+    .tour-details-info {
+        width: 50%;
+        gap: 18px;
+        padding: 8px;
+    }
+
+    .tour-details-title {
+        font-size: 32px;
+    }
+}

@@ -27,7 +27,9 @@ const AdminLogin = () => {
 
             console.log("Login success:", response.data);
 
-            navigate('/admin/dashboard')
+            if(response.status === 200) {   //if successful login
+                navigate('/admin/dashboard')
+            }
         } catch (err) {
             console.error("Login error:", err);
             setServerError(err?.response?.data?.message || "Something went wrong. Please try again.");

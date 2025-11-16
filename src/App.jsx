@@ -4,6 +4,8 @@ import Home from './Components/Home'
 import Navbar from './Components/Navbar'
 import AboutUs from './Components/AboutUs'
 import AdminLogin from './Components/AdminLogin'
+import AdminDashboard from './Components/AdminDashboard'
+import TourDetails from './Components/TourDetails'
 
 function App() {
 
@@ -16,6 +18,8 @@ function App() {
             <Route path='/' element={<Home />} />
             <Route path='/about-us' element={<AboutUs />} />
             <Route path='/admin/login' element={<AdminLogin />} />
+            <Route path='/admin/dashboard' element={<AdminDashboard />} />
+            <Route path='/api/tours/:id' element={<TourDetails />} />
           </Routes>
         </div>
       </BrowserRouter>

@@ -28,8 +28,8 @@
     --btn-txt: #ffffff;
     --btn-hover-bg: #387ec4;
     --primary-btn-hover-color: 1px solid blue;
-    --product-card-bg-color: #e3f0ff;  /* Each Product or Card bg */
+    --product-card-bg-color: #eaf2fb;  /* Each Product or Card bg */
     --card-img-bg: #cae4ff;
-    --product-prices-color:rgb(32, 96, 136);
+    --product-prices-color: rgb(177, 45, 45);
     --form-body: #bbdeff;
 }
