@@ -4,11 +4,21 @@ import AccessTimeIcon from '@mui/icons-material/AccessTime';
 import { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom';
 import { useForm } from "react-hook-form";
+import AddIcon from '@mui/icons-material/Add';
 const AdminDashboard = () => {
     const [allTours, setAllTours] = useState([])
     const [openEditDialog, setOpenEditDialog] = useState(false);    //state for dialog box status , open or close
     const [selectedTour, setSelectedTour] = useState(null);
     const { register, handleSubmit, reset } = useForm();    //to send data easily in json format
+    //for creating a tour
+    const [openCreateDialog, setOpenCreateDialog] = useState(false);    //status of create dialog box
+    const { 
+        register: registerCreate,
+        handleSubmit: handleCreateSubmit,
+        reset: resetCreate 
+    } = useForm();
+
+
     const handleEdit = (tour) => {  //for handling edit 
     setSelectedTour(tour);
     reset({
@@ -63,7 +73,28 @@ const AdminDashboard = () => {
         alert("Failed to delete tour");
     }
     };
-    
+
+    const onCreateTour = async (data) => {
+        try {
+            const response = await axios.post(
+                `${import.meta.env.VITE_BACKEND_URL}/api/tours`,
+                data,
+                { withCredentials: true }
+            );
+            if (response.status === 200) {
+                alert("Tour created successfully!");
+                // refreshing the UI for getting the updated tours
+                window.location.reload();
+                // close the dialog box by changing state
+                setOpenCreateDialog(false);
+            }
+        } 
+        catch (err) {
+            console.log("Create tour error:", err);
+            alert("Failed to create tour");
+        }
+    };
+        
     
     
     useEffect (() => {
@@ -85,6 +116,16 @@ const AdminDashboard = () => {
     return (
         <div className="admin-dashboard-full-container">
             <div className="admin-dashboard-heading">Admin Dashboard</div>
+            <div className="admin-dashboard-create-tour-wrapper">
+                <button 
+                    className="admin-dashboard-create-tour-btn"
+                    onClick={() => {
+                        resetCreate();
+                        setOpenCreateDialog(true)
+                    }}
+                    >➕ Create Tour
+                </button>
+            </div>
             <div className="admin-dashboard-content-area">
                 <div className="admin-dashboard-tours-list">
                     {
@@ -161,6 +202,46 @@ const AdminDashboard = () => {
                                 <button
                                     type="button"
                                     onClick={() => setOpenEditDialog(false)}
+                                    className="cancel-btn"
+                                >
+                                    Cancel
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            )}
+            {openCreateDialog && (
+                <div className="edit-dialog-overlay">
+                    <div className="edit-dialog-box">
+
+                        <h3>Create Tour</h3>
+
+                        <form onSubmit={handleCreateSubmit(onCreateTour)} className="edit-form">
+
+                            <label>Title</label>
+                            <input {...registerCreate("title", { required: true })} />
+
+                            <label>Destination</label>
+                            <input {...registerCreate("destination", { required: true })} />
+
+                            <label>Price</label>
+                            <input type="number" {...registerCreate("price", { required: true })} />
+
+                            <label>Duration (days)</label>
+                            <input type="number" {...registerCreate("duration", { required: true })} />
+
+                            <label>Start Date</label>
+                            <input type="date" {...registerCreate("start_date", { required: true })} />
+
+                            <label>Image URL</label>
+                            <input {...registerCreate("image_url", { required: true })} />
+
+                            <div className="dialog-btn-row">
+                                <button type="submit" className="update-btn">Create</button>
+                                <button
+                                    type="button"
+                                    onClick={() => setOpenCreateDialog(false)}
                                     className="cancel-btn"
                                 >
                                     Cancel
