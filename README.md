@@ -112,13 +112,13 @@ http://localhost:5173
 
 ---
 
-## 🌐 Deployment URLs (fill these after deployment)
+## 🌐 Deployment URLs 
 
-- **Frontend (Vercel):** [<paste_here>](https://trip-z-frontend.vercel.app/)
-- **Backend API Base URL:** [<paste_here>](https://trip-z-backend.vercel.app/)
+- **Frontend (Vercel):** [https://trip-z-frontend.vercel.app/](https://trip-z-frontend.vercel.app/)
+- **Backend API Base URL:** [https://trip-z-backend.vercel.app/](https://trip-z-backend.vercel.app/)
 - **Public GitHub Repos:**
-  - Frontend Repo: [<paste_here>](https://github.com/MananBagadi100/TripZ-frontend)
-  - Backend Repo: [<paste_here>](https://github.com/MananBagadi100/TripZ-backend)
+  - Frontend Repo: [https://github.com/MananBagadi100/TripZ-frontend](https://github.com/MananBagadi100/TripZ-frontend)
+  - Backend Repo: [https://github.com/MananBagadi100/TripZ-backend](https://github.com/MananBagadi100/TripZ-backend)
 
 ---
 
