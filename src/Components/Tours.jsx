@@ -23,7 +23,6 @@ const Tours = () => {
 
     return (
         <div className='tours-full-container'>
-            <div className='tours-heading'>Available Tours</div>
 
             <div className='tours-content-area'>
                 <div className='tours-list'>
