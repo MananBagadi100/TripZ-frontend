@@ -21,7 +21,7 @@ const AdminLogin = () => {
         try {
             setServerError(null);
 
-            const response = await axios.post("http://localhost:3000/api/admin/login",
+            const response = await axios.post(`${import.meta.env.VITE_BACKEND_URL}/api/admin/login`,
                 data, 
                 {withCredentials: true});
 
@@ -35,6 +35,7 @@ const AdminLogin = () => {
             setServerError(err?.response?.data?.message || "Something went wrong. Please try again.");
         }
     };
+    console.log('the backend url in admin login is ',import.meta.env.VITE_BACKEND_URL)
 
     return (
         <div className="login-full-container">
