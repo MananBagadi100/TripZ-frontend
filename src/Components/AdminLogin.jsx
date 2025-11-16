@@ -35,8 +35,7 @@ const AdminLogin = () => {
             setServerError(err?.response?.data?.message || "Something went wrong. Please try again.");
         }
     };
-    console.log('the backend url in admin login is ',import.meta.env.VITE_BACKEND_URL)
-
+    console.log('The backend url is ',import.meta.env.VITE_BACKEND_URL)
     return (
         <div className="login-full-container">
             <div className="login-dialog-box">
