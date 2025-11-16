@@ -1,18 +1,167 @@
-# React + Vite
+# TripZ — Travel Packages CRUD App
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A full‑stack travel management application with public tour browsing and an authenticated admin dashboard.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 🚀 Tech Stack
 
-## React Compiler
+### **Frontend**
+- React (Vite)
+- React Router DOM
+- Axios
+- React‑Hook‑Form
+- Material UI Icons
+- CSS3
 
-The React Compiler is enabled on this template. See [this documentation](https://react.dev/learn/react-compiler) for more information.
+### **Backend**
+- Node.js
+- Express.js
+- MySQL
+- bcrypt
+- JWT Authentication
+- CORS
+- dotenv
 
-Note: This will impact Vite dev & build performances.
+### **Deployment**
+- **Frontend:** Vercel  
+- **Backend:** Render / Railway  
+- **Database:** MySQL Local or Cloud
 
-## Expanding the ESLint configuration
+---
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## 🧩 Features
+
+### **Public**
+- View all tours (list format, mobile‑first)
+- View a single tour’s details
+
+### **Admin**
+- Login with JWT (test credentials below)
+- Create a new tour
+- Edit an existing tour (with modal + react‑hook‑form)
+- Delete a tour
+- Fully responsive dashboard
+
+---
+
+## 🛠️ How to Run Locally
+
+### **1. Clone both repositories**
+```sh
+git clone <frontend_repo_url>
+git clone <backend_repo_url>
+```
+
+---
+
+## 🔧 Backend Setup
+
+### **2. Install dependencies**
+```sh
+cd backend
+npm install
+```
+
+### **3. Create `.env` file**
+```
+PORT=3000
+DB_HOST=localhost
+DB_USER=your_mysql_user
+DB_PASSWORD=your_mysql_password
+DB_NAME=tripzsearch
+DB_PORT=3306
+JWT_SECRET=secretkey
+FRONTEND_URL=http://localhost:5173
+```
+
+### **4. Start backend**
+```sh
+npm run dev
+```
+
+Backend runs at:
+```
+http://localhost:3000
+```
+
+---
+
+## 🎨 Frontend Setup
+
+### **5. Install dependencies**
+```sh
+cd frontend
+npm install
+```
+
+### **6. Create `.env`**
+```
+VITE_BACKEND_URL=http://localhost:3000
+```
+
+### **7. Run frontend**
+```sh
+npm run dev
+```
+
+Frontend runs at:
+```
+http://localhost:5173
+```
+
+---
+
+## 🌐 Deployment URLs (fill these after deployment)
+
+- **Frontend (Vercel):** <paste_here>
+- **Backend API Base URL:** <paste_here>
+- **Public GitHub Repos:**
+  - Frontend Repo: <paste_here>
+  - Backend Repo: <paste_here>
+
+---
+
+## 🔑 Admin Login Credentials (Test User)
+
+```
+email: admin@example.com
+password: password123
+```
+
+---
+
+## 📂 Folder Structure (Quick Overview)
+
+### **Frontend**
+```
+src/
+ ├── Components/
+ ├── Styles/
+ ├── App.jsx
+ ├── main.jsx
+```
+
+### **Backend**
+```
+controllers/
+middleware/
+routes/
+db.js
+server.js
+```
+
+---
+
+## ✔️ Notes
+
+- CORS configured to allow frontend origin
+- Admin dashboard uses modal dialog for editing tours
+- React‑Hook‑Form used for fast JSON submission
+- Fully mobile‑first UI and responsive design
+
+---
+
+## 📄 Author
+
+Built as an assignment project — TripZ CRUD Travel App.
